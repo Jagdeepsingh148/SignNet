@@ -1,0 +1,46 @@
+{
+  "run": "effb0_crop",
+  "input": "crop",
+  "base_model": "google/efficientnet-b0",
+  "dataset": "Marxulia/asl_sign_languages_alphabets_v03",
+  "split": {
+    "train": 8698,
+    "val": 1087,
+    "test": 1088
+  },
+  "hyperparams": {
+    "img_size": 224,
+    "batch": 16,
+    "epochs": 5,
+    "lr": 0.0002,
+    "weight_decay": 0.0001,
+    "warmup_ratio": 0.05,
+    "optimizer": "AdamW",
+    "schedule": "cosine",
+    "seed": 42,
+    "amp": true
+  },
+  "best_val_acc": 0.9917203311867525,
+  "test_acc": 0.9889705882352942,
+  "test_loss": 0.043198085222256315,
+  "test_macro_f1": 0.9890117342517206,
+  "test_weighted_f1": 0.9889713362158813,
+  "params_M": 4.040854,
+  "latency_ms_bs1": 12.427909999969415,
+  "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "train_minutes": 9.865979405244191,
+  "external": {
+    "asl_alphabet_test": {
+      "n": 26,
+      "correct": 13,
+      "accuracy": 0.5
+    }
+  },
+  "external_tta": {
+    "asl_alphabet_test": {
+      "n": 26,
+      "correct": 16,
+      "accuracy": 0.6153846153846154
+    }
+  }
+}

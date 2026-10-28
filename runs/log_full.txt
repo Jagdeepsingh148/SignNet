@@ -1,0 +1,62 @@
+device: cuda | input: full | out: runs\effb0_full
+columns: ['image', 'label', 'idx'] | classes: 26
+split sizes: 8698 1087 1088
+[transformers] You passed `num_labels=26` which is incompatible to the `id2label` map of length `1000`.
+Loading weights:   0%|          | 0/360 [00:00<?, ?it/s]Loading weights: 100%|##########| 360/360 [00:00<00:00, 15206.24it/s]
+[transformers] [1mEfficientNetForImageClassification LOAD REPORT[0m from: google/efficientnet-b0
+Key               | Status   |                                                                                             
+------------------+----------+---------------------------------------------------------------------------------------------
+classifier.weight | MISMATCH | Reinit due to size mismatch - ckpt: torch.Size([1000, 1280]) vs model:torch.Size([26, 1280])
+classifier.bias   | MISMATCH | Reinit due to size mismatch - ckpt: torch.Size([1000]) vs model:torch.Size([26])            
+
+Notes:
+- MISMATCH:	ckpt weights were loaded, but they did not match the original empty weight shapes.
+epoch 1/5  train_loss=1.7701 train_acc=0.5153  val_acc=0.8592  val_loss=0.5171
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00, 16.36it/s]
+epoch 2/5  train_loss=0.2935 train_acc=0.9234  val_acc=0.9770  val_loss=0.0915
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00, 16.27it/s]
+epoch 3/5  train_loss=0.1020 train_acc=0.9770  val_acc=0.9798  val_loss=0.0659
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00, 26.95it/s]
+epoch 4/5  train_loss=0.0635 train_acc=0.9878  val_acc=0.9945  val_loss=0.0241
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00, 24.40it/s]
+epoch 5/5  train_loss=0.0471 train_acc=0.9909  val_acc=0.9963  val_loss=0.0221
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00, 29.20it/s]
+Loading weights:   0%|          | 0/360 [00:00<?, ?it/s]Loading weights: 100%|##########| 360/360 [00:00<00:00, 5871.41it/s]
+
+TEST accuracy: 0.9945
+              precision    recall  f1-score   support
+
+           A     1.0000    1.0000    1.0000        42
+           B     1.0000    1.0000    1.0000        42
+           C     1.0000    1.0000    1.0000        42
+           D     1.0000    1.0000    1.0000        42
+           E     1.0000    1.0000    1.0000        42
+           F     1.0000    1.0000    1.0000        42
+           G     1.0000    1.0000    1.0000        42
+           H     1.0000    1.0000    1.0000        42
+           I     0.9767    1.0000    0.9882        42
+           J     1.0000    1.0000    1.0000        42
+           K     1.0000    1.0000    1.0000        42
+           L     0.9767    1.0000    0.9882        42
+           M     1.0000    1.0000    1.0000        42
+           N     1.0000    0.9524    0.9756        42
+           O     1.0000    0.9524    0.9756        42
+           P     1.0000    1.0000    1.0000        42
+           Q     1.0000    1.0000    1.0000        38
+           R     1.0000    0.9762    0.9880        42
+           S     0.9333    1.0000    0.9655        42
+           T     0.9767    1.0000    0.9882        42
+           U     1.0000    1.0000    1.0000        42
+           V     1.0000    1.0000    1.0000        42
+           W     1.0000    1.0000    1.0000        42
+           X     1.0000    1.0000    1.0000        42
+           Y     1.0000    1.0000    1.0000        42
+           Z     1.0000    0.9762    0.9880        42
+
+    accuracy                         0.9945      1088
+   macro avg     0.9948    0.9945    0.9945      1088
+weighted avg     0.9947    0.9945    0.9945      1088
+
+external asl_alphabet_test: 18/26 = 0.6923
+
+all outputs in runs\effb0_full/

@@ -1,0 +1,66 @@
+device: cuda | input: crop | out: runs\effb0_crop_robust
+columns: ['image', 'label', 'idx'] | classes: 26
+split sizes: 8698 1087 1088
+[transformers] You passed `num_labels=26` which is incompatible to the `id2label` map of length `1000`.
+Loading weights:   0%|          | 0/360 [00:00<?, ?it/s]Loading weights: 100%|##########| 360/360 [00:00<00:00, 13437.06it/s]
+[transformers] [1mEfficientNetForImageClassification LOAD REPORT[0m from: google/efficientnet-b0
+Key               | Status   |                                                                                             
+------------------+----------+---------------------------------------------------------------------------------------------
+classifier.weight | MISMATCH | Reinit due to size mismatch - ckpt: torch.Size([1000, 1280]) vs model:torch.Size([26, 1280])
+classifier.bias   | MISMATCH | Reinit due to size mismatch - ckpt: torch.Size([1000]) vs model:torch.Size([26])            
+
+Notes:
+- MISMATCH:	ckpt weights were loaded, but they did not match the original empty weight shapes.
+epoch 1/5  train_loss=1.9095 train_acc=0.4684  val_acc=0.8638  val_loss=0.5209
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00, 14.78it/s]
+epoch 2/5  train_loss=0.4255 train_acc=0.8880  val_acc=0.9623  val_loss=0.1411
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00, 30.79it/s]
+epoch 3/5  train_loss=0.1938 train_acc=0.9519  val_acc=0.9706  val_loss=0.1179
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00, 23.56it/s]
+epoch 4/5  train_loss=0.1212 train_acc=0.9701  val_acc=0.9936  val_loss=0.0427
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|##########| 1/1 [00:00<00:00, 28.63it/s]
+epoch 5/5  train_loss=0.0897 train_acc=0.9792  val_acc=0.9816  val_loss=0.0531
+Loading weights:   0%|          | 0/360 [00:00<?, ?it/s]Loading weights: 100%|##########| 360/360 [00:00<00:00, 3966.06it/s]
+
+TEST accuracy: 0.9936
+              precision    recall  f1-score   support
+
+           A     1.0000    1.0000    1.0000        42
+           B     1.0000    1.0000    1.0000        42
+           C     1.0000    1.0000    1.0000        42
+           D     0.9767    1.0000    0.9882        42
+           E     1.0000    1.0000    1.0000        42
+           F     1.0000    0.9762    0.9880        42
+           G     1.0000    1.0000    1.0000        42
+           H     1.0000    1.0000    1.0000        42
+           I     1.0000    0.9762    0.9880        42
+           J     0.9545    1.0000    0.9767        42
+           K     1.0000    1.0000    1.0000        42
+           L     1.0000    1.0000    1.0000        42
+           M     1.0000    0.9762    0.9880        42
+           N     0.9767    1.0000    0.9882        42
+           O     1.0000    1.0000    1.0000        42
+           P     1.0000    1.0000    1.0000        42
+           Q     0.9744    1.0000    0.9870        38
+           R     0.9762    0.9762    0.9762        42
+           S     1.0000    1.0000    1.0000        42
+           T     1.0000    1.0000    1.0000        42
+           U     1.0000    1.0000    1.0000        42
+           V     1.0000    1.0000    1.0000        42
+           W     1.0000    1.0000    1.0000        42
+           X     1.0000    0.9762    0.9880        42
+           Y     1.0000    1.0000    1.0000        42
+           Z     0.9756    0.9524    0.9639        42
+
+    accuracy                         0.9936      1088
+   macro avg     0.9936    0.9936    0.9935      1088
+weighted avg     0.9937    0.9936    0.9936      1088
+
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+WARNING: Logging before InitGoogle() is written to STDERR
+W0000 00:00:1792084915.826380   15524 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792084915.839645   23724 inference_feedback_manager.cc:121] Feedback manager requires a model with a single signature inference. Disabling support for feedback tensors.
+W0000 00:00:1792084915.875561   21844 landmark_projection_calculator.cc:81] Using NORM_RECT without IMAGE_DIMENSIONS is only supported for the square ROI. Provide IMAGE_DIMENSIONS or use PROJECTION_MATRIX.
+external asl_alphabet_test: 17/26 = 0.6538 | with mirror TTA: 0.6538
+
+all outputs in runs\effb0_crop_robust/

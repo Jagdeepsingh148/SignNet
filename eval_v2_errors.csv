@@ -1,0 +1,11 @@
+path,true,predicted,confidence
+asl_alphabet_test\F_test.jpg,F,B,0.987
+asl_alphabet_test\G_test.jpg,G,Y,0.590
+asl_alphabet_test\H_test.jpg,H,U,0.953
+asl_alphabet_test\J_test.jpg,J,O,0.500
+asl_alphabet_test\M_test.jpg,M,N,0.554
+asl_alphabet_test\N_test.jpg,N,P,0.571
+asl_alphabet_test\P_test.jpg,P,O,0.282
+asl_alphabet_test\Q_test.jpg,Q,C,0.423
+asl_alphabet_test\X_test.jpg,X,S,0.508
+asl_alphabet_test\Z_test.jpg,Z,D,0.924
